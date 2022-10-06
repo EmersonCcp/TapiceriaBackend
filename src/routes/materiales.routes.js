@@ -6,4 +6,5 @@ module.exports = (app) => {
     app.get('/material/find/:id', MaterialController.getByIdMaterialController);
     app.post('/material/create', MaterialController.crearMaterialController);
     app.put('/material/update', MaterialController.actualizarMaterialController);
+    app.delete('/material/remove/:id', MaterialController.eliminarMaterialController);
 }

@@ -40,6 +40,15 @@ const actualizarMaterialController = async (req, res) => {
     });
   };
 
+const eliminarMaterialController = async (req,res) => {
+    const material = await materialServices.eliminarMaterialService(req.params.id);
+    res.status(202).send({
+        success: true,
+        material
+      });
+}
+
 module.exports = {
-    listarMaterialController, getByIdMaterialController, crearMaterialController, actualizarMaterialController,cantidadMaterialController
+    listarMaterialController, getByIdMaterialController, crearMaterialController,
+     actualizarMaterialController,cantidadMaterialController, eliminarMaterialController
 }

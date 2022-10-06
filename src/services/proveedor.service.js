@@ -17,6 +17,12 @@ const listarProveedoresService = async (query, pageStart = 0, pageLimit = 10) =>
     return proveedorArray;
  }
 
+ const cantidadProveedoresService = async (query, pageStart = 0, pageLimit = 10) => {
+  //Buscar en la BD por codigo
+  const proveedoresModelResult = await ProveedorModel.count();
+  return proveedoresModelResult;
+}
+
  module.exports = {
-    listarProveedoresService
+    listarProveedoresService, cantidadProveedoresService
  }

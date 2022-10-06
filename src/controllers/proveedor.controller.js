@@ -7,9 +7,17 @@ const  listarProveedorController = async (req,res) => {
     res.send({
         proveedor
     });
+}
+
+const cantidadProveedoresController = async (req,res) => {
     
+    const proveedores = await proveedorServices.cantidadProveedoresService(req.query.q);
+    //console.log(personas);
+    res.send({
+        proveedores
+    });
 }
 
 module.exports = {
-    listarProveedorController
+    listarProveedorController, cantidadProveedoresController
 }

@@ -14,5 +14,7 @@ app.use(cors());
 require('./src/routes/materiales.routes')(app);
 require('./src/routes/material_tipo.routes')(app);
 require('./src/routes/proveedor.routes')(app);
+require('./src/routes/ganancia.routes')(app);
+require('./src/routes/gasto.routes')(app);
 
 app.listen(3000);

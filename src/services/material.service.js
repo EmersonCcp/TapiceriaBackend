@@ -49,6 +49,19 @@ const actualizarMaterialService = async (data) => {
   }
 }
 
+const eliminarMaterialService = async (ma_codigo) => {
+    //eliminar el data en la BD
+  const personaModelCount = await MaterialModel.destroy({
+    where: {
+      ma_codigo
+    }
+  });
+  if (personaModelCount > 0) {
+    return true;
+  }
+ }
+
  module.exports = {
-    listarMaterialService, getByIdMaterialService, crearMaterialService, actualizarMaterialService, cantidadMaterialesService
+    listarMaterialService, getByIdMaterialService, crearMaterialService, actualizarMaterialService, cantidadMaterialesService,
+    eliminarMaterialService
  }
